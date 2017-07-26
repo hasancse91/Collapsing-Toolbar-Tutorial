@@ -12,7 +12,6 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     private CoordinatorLayout coordinatorLayout;
-    private AppBarLayout appBarLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         coordinatorLayout = (CoordinatorLayout) findViewById(R.id.coordinateLayout);
-        appBarLayout = (AppBarLayout) findViewById(R.id.appBarLayout);
+        AppBarLayout appBarLayout = (AppBarLayout) findViewById(R.id.appBarLayout);
 
         appBarLayout.addOnOffsetChangedListener(new AppBarStateChangeListener() {
             @Override
@@ -47,12 +46,10 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-
         if (item.getItemId() == android.R.id.home) {
             Snackbar.make(coordinatorLayout, "Back button pressed", Snackbar.LENGTH_LONG).show();
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 }
