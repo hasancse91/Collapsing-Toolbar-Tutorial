@@ -30,22 +30,23 @@ Inside the `onCreate()` method of `MainActivity` we can listen the state change 
 
 ```
 appBarLayout.addOnOffsetChangedListener(new AppBarStateChangeListener() {
-            @Override
-            public void onStateChanged(AppBarLayout appBarLayout, State state) {
-                if(state.equals(State.COLLAPSED)) {
-                    toolbar.setBackgroundResource(R.drawable.custom_toolbar);
-                    Toast.makeText(getApplicationContext(), "COLLAPSED", Toast.LENGTH_SHORT).show();
-                }
-                else if (state.equals(State.EXPANDED)) {
-                    toolbar.setBackgroundResource(R.color.transparent);
-                    Toast.makeText(getApplicationContext(), "EXPANDED", Toast.LENGTH_SHORT).show();
-                }
-                else if ((state.equals(State.IDLE))){
-                    Toast.makeText(getApplicationContext(), "IDLE", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
+    @Override
+    public void onStateChanged(AppBarLayout appBarLayout, State state) {
+        if(state.equals(State.COLLAPSED)) {
+            toolbar.setBackgroundResource(R.drawable.custom_toolbar);
+            Toast.makeText(getApplicationContext(), "COLLAPSED", Toast.LENGTH_SHORT).show();
+        }
+        else if (state.equals(State.EXPANDED)) {
+            toolbar.setBackgroundResource(R.color.transparent);
+            Toast.makeText(getApplicationContext(), "EXPANDED", Toast.LENGTH_SHORT).show();
+        }
+        else if ((state.equals(State.IDLE))){
+            Toast.makeText(getApplicationContext(), "IDLE", Toast.LENGTH_SHORT).show();
+        }
+    }
+});
 ```
 
 To get the whole project please clone it and run at your machine. If you see any error please let me know or send pull request.
+
 Thank you. :-)
