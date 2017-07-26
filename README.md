@@ -6,7 +6,7 @@ We'll design this type of sample Android App using Collapsing Toolbar Layout:
 
 ### Prepare Gradle
 First of all add these dependencies to your gradle file: 
-```
+```xml
 dependencies {
     ...
     compile 'com.android.support:design:26.0.0-alpha1'
@@ -28,7 +28,7 @@ Inside `CoordinatorLayout` take two widgets `AppBarLayout` and `NestedScrollView
 
 Inside the `onCreate()` method of `MainActivity` we can listen the state change by this method and take action:
 
-```
+```java
 appBarLayout.addOnOffsetChangedListener(new AppBarStateChangeListener() {
     @Override
     public void onStateChanged(AppBarLayout appBarLayout, State state) {
